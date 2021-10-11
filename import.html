@@ -1,0 +1,30 @@
+<html>
+
+<link rel="stylesheet"  href="borang.css">
+<link rel="stylesheet"  href="button.css">
+
+<head>
+	<title> IMPORT DATA </title>
+</head>
+<body>
+	<h3 class ="panjang"> IMPORT DATA </h3>
+	<form class="panjang" action="import.php" method="POST" enctype="multipart/form-data" class="import">
+		<table>
+			<tr>
+				<td> Jadual </td>
+				<td>
+					<select name="namatable">
+						<option> pelajar </option>
+						<option> soalan </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Nama Fail</td>
+				<td><input type = "file" name="namafail" accpet=".txt"></td>
+			</tr>
+		</table>
+		<button type="submit" class="import"> Import </button>
+	</form>
+</body>
+</html>

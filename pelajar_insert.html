@@ -1,0 +1,127 @@
+<html>
+
+<link rel="stylesheet" type="text/css" href="borang.css">
+<link rel="stylesheet" type="text/css" href="button.css">
+<head>
+	<title> TAMBAH PELAJAR</title>
+	<style>
+	.tooltip {
+  position: relative;
+  display: inline-block;
+  text-align: right;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+body{
+	background-image: url(wood.jpg);
+}
+
+iframe.header{
+	width: 700px;
+	height: 50px;
+	border-radius: 10px 10px 0 0 ;
+	float: left;
+}
+
+iframe.menu{
+	clear: left;
+	float: left;
+	position: relative;
+	border: none;
+	border-radius: 0 0 0 15px;
+	width: 170px;
+	height: 500px;
+}
+
+iframe.kandungan{
+	float: left;
+	position:relative;
+	border: none;
+	border-radius: 0 0 10px 0;
+	width: 530px;
+	height: 500px;
+}
+	</style>
+</head>
+<body>
+	<h3 class="panjang"> DAFTAR PELAJAR BAHARU </h3>
+<form class="panjang" action = "pelajar_insert.php" method ="post">
+	<table> 
+		<tr>
+			<td class="warna"> ID Pelajar </td>
+			<td><input type = "text" name = "idpelajar" placeholder="Cth: P001" pattern="[A-Z0-9]{4}" oninvalid="this.setCustomValidity('Sila masukkan 4 aksara')" oninput="this.setCustomValidity('')"required ></td>
+		</tr>
+		<tr>
+			<td class="warna"> Nama</td>
+			<td><input type = "text" name= "namapelajar" placeholder="Cth: Sarah Lee"></td>
+		</tr>
+		<tr>
+			<td class="warna"> ID Kelas </td>
+			<td> <input type = "text" name= "idkelas" placeholder="Cth: K01"></td>
+		</tr>
+		<tr>
+			<td class="warna"> Password </td>
+			<td><input type = "text" name="password" ></td>
+			
+		</tr>
+	</table>
+	<div class="tooltip"><img src="info.png">
+	<span class="tooltiptext"> Sila pastikan maklumat adalah benar </span>
+	</div>
+<button type = "submit" class="signup"> Daftar </button>
+</form>
+<br>
+<center>
+	<button class="biru" onclick="tukar_warna(0)"> Biru </button>
+	<button class="hijau" onclick="tukar_warna(0)"> Hijau </button>
+	<button class="merah" onclick="tukar_warna(0)"> Merah </button>
+	<button class="hitam" onclick="tukar_warna(0)"> Hitam </button>
+</center>
+<script>
+	function tukar_warna(n){
+		var warna = ["Blue","Green","Red","Black"];
+		var teks = document.getElementsByClassName("warna");
+		for (var i = 0; i<teks.length; i++) {
+			teks[i].style.color =warna[n];
+	}
+</script>
+</body>
+</html>
